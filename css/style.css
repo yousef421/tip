@@ -1,0 +1,243 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background: hsl(185, 41%, 84%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: hsl(183, 100%, 15%);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    min-height: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 8px 32px rgba(61, 90, 128, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calc {
+    width: 45%;
+    height: 350px;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.bill {
+    margin-bottom: 1.4rem;
+}
+
+.calc .bill label {
+    color: hsl(183, 100%, 15%);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.calc .bill input {
+    width: 100%;
+    padding: 0.2rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: hsl(189, 41%, 97%);
+    font-size: 1.5rem;
+    color: hsl(183, 100%, 15%);
+    font-family: inherit;
+    font-weight: 700;
+    outline: none;
+    text-align: right;
+}
+
+.calc .bill input:focus {
+    border: 2px solid hsl(172, 67%, 45%);
+}
+
+.tip {
+    margin-bottom: 1.4rem;
+}
+
+.tip label {
+    color: hsl(183, 100%, 15%);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.tip-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.tip-option {
+    background: hsl(183, 100%, 15%);
+    color: #fff;
+    font-size: 1.25rem;
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tip-option.active,
+.tip-option:focus,
+.tip-option:hover,
+.selected {
+    background: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+#custom-tip {
+    background: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: inherit;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    text-align: right;
+    padding: 0.5rem 0;
+    outline: none;
+}
+
+.custom-tip:focus {
+    border: 2px solid hsl(172, 67%, 45%);
+}
+
+.people-num {
+    margin-bottom: 1.4rem;
+}
+
+.people-num label {
+    color: hsl(183, 100%, 15%);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.people-num input {
+    width: 100%;
+    padding: 0.2rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: hsl(189, 41%, 97%);
+    font-size: 1.5rem;
+    color: hsl(183, 100%, 15%);
+    font-family: inherit;
+    font-weight: 700;
+    outline: none;
+    text-align: right;
+}
+
+.res {
+    width: 45%;
+    height: 350px;
+    max-width: 500px;
+    padding: 3rem 2rem;
+    background: hsl(183, 100%, 15%);
+    border-radius: 15px;
+}
+.res .tip-amount,
+.res .total {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.res .tip-amount p,
+.res .total p {
+    color: #FFF;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.res .tip-amount h2,
+.res .total h2 {    
+    color: hsl(172, 67%, 45%);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}   
+
+.res .total h2 {
+    margin-top: 0.5rem;
+}   
+
+.res .total p {
+    margin-top: 0.5rem;
+}   
+
+.res .total p span,
+.res .tip-amount p span {
+    display: block;
+    color: hsl(184, 14%, 56%);
+}
+
+#reset-btn {
+    width: 100%;
+    background: hsl(172, 67%, 45%);
+    color: #FFF;
+    font-size: 1.25rem;
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 0;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+#reset-btn:hover {
+    background: #FFF;
+    color: hsl(172, 67%, 45%);
+}
+
+@media (max-width: 725px) {
+    .container {
+        padding: 1rem 0;
+        max-width: 500px;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .calc,
+    .res {  
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }   
+    .calc .bill,
+    .tip,   
+    .people-num {
+        width: 100%;
+    }
+}
